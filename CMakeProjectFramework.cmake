@@ -14,3 +14,13 @@ macro(cmakeprojectframework_cmakelists_mainproject_library base_project_name_ful
   include(InlineCode/CMakeLists_MainProject_Library)
 
 endmacro()
+
+macro(cmakeprojectframework_cmakelists_includeproject base_project_name_full base_project_name_namespace base_project_name_leafname)
+
+  set(MY_BASE_PROJECT_NAME_FULL ${base_project_name_full})
+  set(MY_BASE_PROJECT_NAME_NAMESPACE ${base_project_name_namespace})
+  set(MY_BASE_PROJECT_NAME_LEAFNAME ${base_project_name_leafname})
+
+  include(InlineCode/CMakeLists_IncludeProject)
+
+endmacro()
