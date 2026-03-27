@@ -16,6 +16,17 @@ macro(cmakeprojectframework_cmakelists_mainproject_executable base_project_name_
 
 endmacro()
 
+macro(cmakeprojectframework_cmakelists_executableproject base_project_name_full base_project_name_namespace base_project_name_leafname target_output_name)
+
+  set(MY_BASE_PROJECT_NAME_FULL "${base_project_name_full}")
+  set(MY_BASE_PROJECT_NAME_NAMESPACE "${base_project_name_namespace}")
+  set(MY_BASE_PROJECT_NAME_LEAFNAME "${base_project_name_leafname}")
+  set(MY_TARGET_OUTPUT_NAME "${target_output_name}")
+
+  include(InlineCode/CMakeLists_ExecutableProject)
+
+endmacro()
+
 macro(cmakeprojectframework_cmakelists_mainproject_library base_project_name_full base_project_name_namespace base_project_name_leafname)
 
   set(MY_BASE_PROJECT_NAME_FULL "${base_project_name_full}")
