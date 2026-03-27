@@ -11,6 +11,7 @@ include(AssertVariableDefined)
 assert_variable_defined(MY_BASE_PROJECT_NAME_FULL)
 assert_variable_defined(MY_BASE_PROJECT_NAME_NAMESPACE)
 assert_variable_defined(MY_BASE_PROJECT_NAME_LEAFNAME)
+assert_variable_defined(MY_BASE_PROJECT_HOMEPAGE_URL)
 
 string(TOLOWER ${MY_BASE_PROJECT_NAME_FULL} MY_BASE_PROJECT_NAME_FULL_LOWERCASE)
 string(TOUPPER ${MY_BASE_PROJECT_NAME_FULL} MY_BASE_PROJECT_NAME_FULL_UPPERCASE)
@@ -18,7 +19,7 @@ string(TOUPPER ${MY_BASE_PROJECT_NAME_FULL} MY_BASE_PROJECT_NAME_FULL_UPPERCASE)
 project(${MY_BASE_PROJECT_NAME_FULL}
   VERSION 0.1.0
   DESCRIPTION ""
-  HOMEPAGE_URL ""
+  HOMEPAGE_URL "${MY_BASE_PROJECT_HOMEPAGE_URL}"
   LANGUAGES CXX
   )
 
@@ -41,20 +42,8 @@ FetchContent_Declare(${MY_BASE_PROJECT_NAME_FULL}_Source
   SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Source"
   )
 
-FetchContent_Declare(${MY_BASE_PROJECT_NAME_FULL}_Static
-  SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Static"
-  )
-
-FetchContent_Declare(${MY_BASE_PROJECT_NAME_FULL}_Shared
-  SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Shared"
-  )
-
-FetchContent_Declare(${MY_BASE_PROJECT_NAME_FULL}_Module
-  SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Module"
-  )
-
-FetchContent_Declare(${MY_BASE_PROJECT_NAME_FULL}_Object
-  SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Object"
+FetchContent_Declare(${MY_BASE_PROJECT_NAME_FULL}_Executable
+  SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/Executable"
   )
 
 if(BUILD_TESTING)
@@ -69,13 +58,7 @@ FetchContent_MakeAvailable(${MY_BASE_PROJECT_NAME_FULL}_Include)
 
 FetchContent_MakeAvailable(${MY_BASE_PROJECT_NAME_FULL}_Source)
 
-FetchContent_MakeAvailable(${MY_BASE_PROJECT_NAME_FULL}_Static)
-
-FetchContent_MakeAvailable(${MY_BASE_PROJECT_NAME_FULL}_Shared)
-
-FetchContent_MakeAvailable(${MY_BASE_PROJECT_NAME_FULL}_Module)
-
-FetchContent_MakeAvailable(${MY_BASE_PROJECT_NAME_FULL}_Object)
+FetchContent_MakeAvailable(${MY_BASE_PROJECT_NAME_FULL}_Executable)
 
 if(BUILD_TESTING)
   FetchContent_MakeAvailable(${MY_BASE_PROJECT_NAME_FULL}_Tests)
