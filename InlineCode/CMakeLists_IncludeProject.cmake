@@ -111,10 +111,6 @@ unset(FILES_CMAKE_RESULT)
 # code so that code writers don't have to dig through this cmake code.
 include("FindPackages.cmake")
 
-find_package(CppUtils_StdReimpl CONFIG REQUIRED COMPONENTS Include)
-find_package(CppUtils_Core CONFIG REQUIRED COMPONENTS Include)
-find_package(CppUtils_Misc CONFIG REQUIRED COMPONENTS Include)
-
 # We have dependency lists separated into "TargetLinkLibraries.cmake" files and include them here in the generalized cmake
 # code so that code writers don't have to dig through this cmake code.
 include("TargetLinkLibraries.cmake")
