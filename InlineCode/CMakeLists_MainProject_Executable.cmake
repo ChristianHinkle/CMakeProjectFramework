@@ -3,8 +3,8 @@
 cmake_minimum_required(VERSION 4.0)
 
 # Tell CMake where our cmake scripts ("modules") are.
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/GeneralCMakeModules")
-list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/GeneralCMakeModules/CPack")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMakeUtils_Misc/Modules")
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/CMakeUtils_Misc/Modules/CPack")
 
 include(AssertVariableDefined)
 
